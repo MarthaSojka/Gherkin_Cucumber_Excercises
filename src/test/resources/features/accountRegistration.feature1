@@ -1,0 +1,36 @@
+Feature: Hotel account registration
+  As a user,
+  I want to register an account,
+  so that I can book hotels.
+
+  Scenario: Email already taken
+    Given the user is on the authentication page
+    When the user types an existing email the create account input
+    And the user clicks the create an account button
+    Then the page should display error "An account using this email address has already been registered. Please enter a valid password or request a new one."
+
+  Scenario: Successful account creation
+    Given the user is on the authentication page
+    When the user types a random email into the create account input
+    And the user clicks the create an account button
+    And the user fills the required fields on the create account form
+    And the user clicks the register button
+    Then the user should be logged in on their account page
+    And the account page should display welcome message "Your account has been created."
+
+  Scenario Outline: Successful account creation with "<firstName>" "<lastName>" and "<password>"
+    Given the user is on the authentication page
+    When the user types a random email into the create account input
+    And the user clicks the create an account button
+    And the user fills the required fields: "<firstName>" "<lastName>" and "<password>" on the account form
+    And the user clicks the register button
+    Then the user should be logged in on their account page
+    And the account page should display welcome message "Your account has been created."
+    Examples:
+      | firstName | lastName | password |
+      | John      | Doe      | secret   |
+      | Martha    | Jay      | pass01   |
+
+
+
+
