@@ -5,30 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="062ed825-a931-4337-a280-80d52c663aba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/fragments/NavBar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/fragments/SelectHotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/helpers/Helpers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/AuthPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/CreateAccountPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAccountPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAddressPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/RoomsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/AccountRegistrationSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/AddAddressSteps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/TestRunnerGoogle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/accountRegistration.feature1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/addAddress.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testfeaturest/CoderslabLogin.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testfeaturest/CoderslabPrework.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testfeaturest/GoogleSearch.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/fragments/AddressPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/helpers/Browser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/NewAddressForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/fragments/NavBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/fragments/NavBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/helpers/Helpers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/helpers/Helpers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/AuthPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/AuthPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/CreateAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/CreateAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAddressPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/course/selenium/pages/MyAddressPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/course/selenium/AccountRegistrationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/AccountRegistrationSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/course/selenium/AddAddressSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/course/selenium/AddAddressSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/addAddress.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/addAddress.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +55,10 @@
     "JUnit.TestRunner.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_directory_selection": "E:/0_MyProjects/Gerkin_Cucumber_Excercises/src/test/java"
+    "last_directory_selection": "E:/0_MyProjects/Gerkin_Cucumber_Excercises/src/test/java",
+    "last_opened_file_path": "E:/0_MyProjects/Cucumber - rozwiązanie Bartka"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -137,6 +129,14 @@
         <item itemvalue="Cucumber Java.Scenario: Successful account creation with &quot;&lt;firstName&gt;&quot; &quot;&lt;lastName&gt;&quot; and &quot;&lt;password&gt;&quot;" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

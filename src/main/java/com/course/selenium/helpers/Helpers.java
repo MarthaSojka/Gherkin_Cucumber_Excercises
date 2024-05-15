@@ -11,6 +11,10 @@ public class Helpers {
         return String.format("john_%d@gmail.com", System.currentTimeMillis());
     }
 
+    public static String getRandomAlias() {
+        return "Address " + System.currentTimeMillis();
+    }
+
     public static String today() {
         LocalDate currentDate = LocalDate.now();
         return currentDate.format(DATE_FORMATTER);

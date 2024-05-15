@@ -53,11 +53,11 @@ public class CreateAccountPage {
     public void clickRegisterButton() {
         registerButton.click();
         wait.ignoring(StaleElementReferenceException.class)
-                .until(
-                        or(
-                                presenceOfElementLocated(By.cssSelector(".alert-danger")),
-                                urlContains("my-account")
-                        )
-                );
+            .until(
+                or(
+                    presenceOfElementLocated(By.cssSelector(".alert-danger")),
+                    urlContains("my-account")
+                )
+            );
     }
 }

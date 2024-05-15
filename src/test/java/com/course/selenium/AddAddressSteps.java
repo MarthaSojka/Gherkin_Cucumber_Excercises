@@ -1,74 +1,64 @@
 package com.course.selenium;
 
-import com.course.selenium.pages.AuthPage;
-import com.course.selenium.pages.HomePage;
-import com.course.selenium.pages.MyAccountPage;
-import com.course.selenium.pages.MyAddressPage;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
+import com.course.selenium.helpers.Browser;
+import com.course.selenium.pages.*;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.util.Map;
+
+import static com.course.selenium.helpers.Helpers.getRandomAlias;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class AddAddressSteps {
 
-    private WebDriver driver;
+    private final WebDriver driver = Browser.getDriver();
     private MyAccountPage myAccountPage;
     private MyAddressPage myAddressPage;
-    @Before
-    public void setUp() {
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get("https://hotel-testlab.coderslab.pl/en/");
-    }
+    private NewAddressForm newAddressForm;
+    private String addressAlias;
 
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
-    @Given("the user is on the my account page")
-    public void theUserIsOnTheMyAccountPage() {
+    @Given("the user is on My account page")
+    public void theUserIsOnMyAccountPage() {
         HomePage homePage = new HomePage(driver);
         homePage.clickSignInLink();
         AuthPage authPage = new AuthPage(driver);
         authPage.typeEmailIntoLogin("test128@testing.pl");
         authPage.typePasswordIntoLogin("test1");
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
         authPage.clickSignInButton();
         myAccountPage = new MyAccountPage(driver);
     }
 
-    @When("the user clicks the my addresses button")
-    public void theUserClicksTheMyAddressesButton() {
+    @When("the user clicks My addresses button")
+    public void theUserClicksMyAddressesButton() {
         myAccountPage.clickMyAddress();
         myAddressPage = new MyAddressPage(driver);
+        myAddressPage.clickAddNewAddressButton();
+        newAddressForm = new NewAddressForm(driver);
     }
 
-    @And("the user fills the required fields on the my address form")
-    public void theUserFillsTheRequiredFieldsOnTheMyAddressForm() {
-        myAddressPage.fillAddressInput("Test");
-        myAddressPage.fillPostcodeInput("55555");
-        myAddressPage.fillCityInput("Test");
-        myAddressPage.fillPhoneInput("1254");
-        myAddressPage.fillAddressTitleInput("address" + Math.random());
+    @And("the user fills required fields on my address form")
+    public void theUserFillsRequiredFieldsOnMyAddressForm() {
+        addressAlias = getRandomAlias();
+
+        newAddressForm.fillAddressInput("Krótka 32");
+        newAddressForm.fillPostcodeInput("55-555");
+        newAddressForm.fillCityInput("Warszawa");
+        newAddressForm.fillPhoneInput("555-555-555");
+        newAddressForm.fillAddressTitleInput(addressAlias);
     }
 
-    @And("the user clicks the add a new address button")
-    public void theUserClicksTheAddANewAddressButton() {
-        myAddressPage.clickSubmitAddressButton();
+    @And("the user clicks Add a new address button")
+    public void theUserClicksAddANewAddressButton() {
+        newAddressForm.clickSaveAddressButton();
+        myAddressPage = new MyAddressPage(driver);
     }
-
+/*
     @Then("there is displayed a message {string}")
     public void thereIsDisplayedAMessage(String message) {
         assertTrue(myAddressPage.isMessageShown());
@@ -78,4 +68,14 @@ public class AddAddressSteps {
     public void theNewAddressIsAddedToTheList() {
         assertTrue(myAddressPage.getNumberOfAddresses() > 0);
     }
+*/
+
+    @Then("my addresses page should include new address")
+    public void myAddressesPageShouldIncludeNewAddress() {
+        Map<String, String> addressByAlias = myAddressPage.getAddressesByAlias();
+        String key = addressAlias.toUpperCase();
+        assertTrue(addressByAlias.containsKey(key));
+        assertEquals("Test Testing Krótka 32 55-555 Warszawa Poland 555-555-555", addressByAlias.get(key));
+    }
+
 }

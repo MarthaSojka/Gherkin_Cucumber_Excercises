@@ -1,17 +1,15 @@
 package com.course.selenium;
 
+import com.course.selenium.helpers.Browser;
 import com.course.selenium.pages.AuthPage;
 import com.course.selenium.pages.CreateAccountPage;
 import com.course.selenium.pages.HomePage;
 import com.course.selenium.pages.MyAccountPage;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static com.course.selenium.helpers.Helpers.getRandomEmail;
 import static org.junit.Assert.assertEquals;
@@ -19,25 +17,12 @@ import static org.junit.Assert.assertTrue;
 
 public class AccountRegistrationSteps {
 
-    private WebDriver driver;
+    private final WebDriver driver = Browser.getDriver();
     private AuthPage authPage;
     private CreateAccountPage createAccountPage;
     private MyAccountPage myAccountPage;
 
 
-    @Before
-    public void setUp() {
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get("https://hotel-testlab.coderslab.pl/en/");
-    }
-
-    @After
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 
     @Given("the user is on the authentication page")
     public void theUserIsOnTheAuthenticationPage() {

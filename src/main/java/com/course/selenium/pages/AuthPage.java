@@ -1,5 +1,6 @@
 package com.course.selenium.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,12 +47,12 @@ public class AuthPage {
     public void clickCreateAccountButton() {
         createAccountButton.click();
         wait.ignoring(StaleElementReferenceException.class)
-                .until(
-                        or(
-                                visibilityOf(createAccountAlert),
-                                urlContains("#account-creation")
-                        )
-                );
+            .until(
+                or(
+                    visibilityOf(createAccountAlert),
+                    urlContains("#account-creation")
+                )
+            );
     }
 
     public boolean isErrorMessageShown() {
@@ -73,13 +74,14 @@ public class AuthPage {
     }
 
     public void clickSignInButton() {
-        createAccountButton.click();
+        signInButton.click();
         wait.ignoring(StaleElementReferenceException.class)
-                .until(
-                        or(
-                                urlContains("my-account")
-                        )
-                );
+            .until(
+                or(
+                    presenceOfElementLocated(By.cssSelector(".page-heading +.alert-danger")),
+                    urlContains("my-account")
+                )
+            );
     }
 
 
